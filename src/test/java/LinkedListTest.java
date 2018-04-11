@@ -9,11 +9,4 @@ public class LinkedListTest {
         LinkedList list = new LinkedList();
         Assert.assertEquals(0, list.size());
     }
-
-    @Test
-    public void testSize_addFirstElementListSizeIsOne() {
-        LinkedList list = new LinkedList();
-        list.add("a");
-        Assert.assertEquals(1, list.size());
-    }
 }
