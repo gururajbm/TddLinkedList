@@ -12,6 +12,10 @@ public class LinkedListTest {
         list = new LinkedList<String>();
     }
 
+    private void getListWithOneElement(String value) {
+        list.add(value);
+    }
+
     @Test
     public void testSize_initialListIsEmpty() {
         Assert.assertEquals(0, list.size());
@@ -19,13 +23,20 @@ public class LinkedListTest {
 
     @Test
     public void testSize_oneElement_sizeIsOne() {
-        list.add("a");
+        getListWithOneElement("a");
         Assert.assertEquals(1, list.size());
     }
 
     @Test
     public void testGet_oneElement() {
-        list.add("a");
+        getListWithOneElement("a");
         Assert.assertEquals("a", list.get(0));
+    }
+
+    @Test
+    public void testSize_addSecondElement() {
+        getListWithOneElement("a");
+        list.add("b");
+        Assert.assertEquals(2, list.size());
     }
 }
