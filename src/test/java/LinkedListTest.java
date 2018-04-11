@@ -16,6 +16,12 @@ public class LinkedListTest {
         list.add(value);
     }
 
+    private void getListOfGivenElement(String... elements) {
+        for (String s : elements) {
+            list.add(s);
+        }
+    }
+
     @Test
     public void testSize_initialListIsEmpty() {
         Assert.assertEquals(0, list.size());
@@ -23,20 +29,31 @@ public class LinkedListTest {
 
     @Test
     public void testSize_oneElement_sizeIsOne() {
-        getListWithOneElement("a");
+        getListOfGivenElement("a");
         Assert.assertEquals(1, list.size());
     }
 
     @Test
     public void testGet_oneElement() {
-        getListWithOneElement("a");
+        getListOfGivenElement("a");
         Assert.assertEquals("a", list.get(0));
     }
 
     @Test
     public void testSize_addSecondElement() {
-        getListWithOneElement("a");
-        list.add("b");
+        getListOfGivenElement("a", "b");
         Assert.assertEquals(2, list.size());
+    }
+
+    @Test
+    public void testGet_getFirstElement_inTwoElementList() {
+        getListOfGivenElement("a", "b");
+        Assert.assertEquals("a", list.get(0));
+    }
+
+    @Test
+    public void testGet_getSecondElement_inTwoElementList() {
+        getListOfGivenElement("a", "b");
+        Assert.assertEquals("b", list.get(1));
     }
 }

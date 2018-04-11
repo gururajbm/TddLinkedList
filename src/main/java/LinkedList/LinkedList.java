@@ -11,7 +11,15 @@ public class LinkedList<T> {
 
     public void add(T value) {
         size++;
-        first = new Node(value);
+        if (first == null) {
+            first = new Node(value);
+        } else {
+            Node node = first;
+            if (node.next != null) {
+                node = node.next;
+            }
+            node.next = new Node(value);
+        }
     }
 
     public T get(int index) {
@@ -20,6 +28,7 @@ public class LinkedList<T> {
 
     private class Node {
         private final T value;
+        Node next = null;
         public Node(T value) {
             this.value = value;
         }
