@@ -23,6 +23,16 @@ public class LinkedList<T> {
     }
 
     public T get(int index) {
+        Node node = first;
+        while (index > 0) {
+            index--;
+            node = node.next;
+        }
+
+        return node.value;
+    }
+
+    public T remove(int index) {
         return first.value;
     }
 

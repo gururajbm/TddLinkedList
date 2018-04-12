@@ -12,10 +12,6 @@ public class LinkedListTest {
         list = new LinkedList<String>();
     }
 
-    private void getListWithOneElement(String value) {
-        list.add(value);
-    }
-
     private void getListOfGivenElement(String... elements) {
         for (String s : elements) {
             list.add(s);
@@ -56,4 +52,12 @@ public class LinkedListTest {
         getListOfGivenElement("a", "b");
         Assert.assertEquals("b", list.get(1));
     }
+
+    @Test
+    public void testRemove_firstElementFromElementList_elementWasFirstElement() {
+        getListOfGivenElement("a", "b");
+        String result = (String) list.remove(0);
+        Assert.assertEquals("a", result);
+    }
+
 }
