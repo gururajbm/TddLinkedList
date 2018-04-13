@@ -1,0 +1,10 @@
+LinkedList
+Case 1. List is initially empty (size is 0)
+Case 2. Add "a" (element to list) size is 1
+Case 3. Add "a" get(0) is "a"
+Case 4. Add "b" to list containing "a" size is 2
+case 5. Add "b" to list containing "a" get(0) is a
+case 6. Add "b" to list containing "a" get(1) is b
+case 7. Given list 'a', 'b' remove(0), removed item is 'a'
+case 8. Given list 'a', 'b' remove(0), size is 1
+case 9. Given list 'a', 'b' remove(0), get(0) is 'b'
